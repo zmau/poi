@@ -36,7 +36,6 @@ public class BaseTestColumnShifting {
         row.createCell(5, CellType.NUMERIC).setCellValue(5.2);
         row.createCell(7, CellType.NUMERIC).setCellValue(7.2);
 
-        BaseTestSheetShiftColumns.writeSheetToLog(sheet1);
         initColumnShifter();
     }
     protected void initColumnShifter(){
@@ -46,8 +45,6 @@ public class BaseTestColumnShifting {
     @Test
     public void testShift3ColumnsRight() {
         columnShifter.shiftColumns(1, 2, 3);
-        
-        BaseTestSheetShiftColumns.writeSheetToLog(sheet1);
         
         Cell cell = sheet1.getRow(0).getCell(4);
         assertNull(cell);
